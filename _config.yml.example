@@ -1,0 +1,32 @@
+# General settings
+title: '**GitHub Pages** boilerplate' # feel free to use Markdown
+description: >- # this ignores newlines until the next definition
+  Jekyll boilerplate for [GitHub Pages](https://pages.github.com) (no plugins) does the every-time-new-static-site
+  groundwork for you. Featuring multilanguage and shared codebase for multiple connected 
+  sites.
+language: en # ISO 639-1 language code
+environment: production # if not production, all URLs will be disallowed for crawling
+permalink: pretty # use pretty URLs (without .html)
+
+# Page titles
+page_title:
+  append: true # site title will be appended after page title (if set)
+  delimiter: '—' # optional delimiter, | (pipe) is default
+
+# Google Tag Manager
+gtm_container_id: GTM-O3A98T7
+
+# Ensure we're using kramdown Markdown engine (the only supported by GitHub Pages)
+markdown: kramdown
+
+# HTML compression using jekyll-compress-html layout settings (see jch.penibelst.de)
+compress_html:
+  clippings: all
+  ignore:
+    envs:
+      - production # remove this line to enable HTML compression
+      - development
+
+# Don't include original Markdown files in the output
+optional_front_matter:
+  remove_originals: true

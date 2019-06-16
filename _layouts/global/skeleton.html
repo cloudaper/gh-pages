@@ -1,0 +1,17 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="{% include helpers/current_language.html %}">
+  <head>
+    {% include layouts/global/head/default.html %}
+  </head>
+  <body
+    {% if layout.body_classes %}
+      class="{{ layout.body_classes | join: ' ' | strip }}"
+    {% endif %}
+  >
+    {% include layouts/global/_google_tag_manager.html %}
+    {{ content }}
+  </body>
+</html>
