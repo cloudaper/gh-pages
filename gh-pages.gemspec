@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
-  s.name        = 'gh-pages-boilerplate'
-  s.version     = '0.3.0'
-  s.summary     = 'GitHub Pages boilerplate for a quick presentation site launch'
+  s.name        = 'cloudaper-gh-pages'
+  s.version     = '0.1.0'
+  s.summary     = 'Core of all Cloudaper presentation sites'
   s.author      = ['Cloudaper', 'Kryštof Korb']
   s.email       = ['hello@cloudaper.com', 'krystof@korb.cz']
-  s.license     = 'MIT'
-  s.homepage    = 'https://github.com/cloudaper/gh-pages-boilerplate'
+  s.license     = 'UNLICENSED'
+  s.homepage    = 'https://github.com/cloudaper/gh-pages'
 
   s.metadata['plugin_type'] = 'theme'
 
