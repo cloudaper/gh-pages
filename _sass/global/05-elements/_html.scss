@@ -1,3 +1,4 @@
 html {
   font-size: var(--responsive-baseline-unit, map-deep-get($baseline-unit, 'default'));
+  height: 100%;
 }
