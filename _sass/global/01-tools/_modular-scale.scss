@@ -1,0 +1,15 @@
+@function modular-scale($base, $ratio) {
+
+  $map: (
+    smallest: $base * power($ratio, -3),
+    smaller: $base * power($ratio, -2),
+    small: $base * power($ratio, -1),
+    default: $base,
+    large: $base * power($ratio, 1),
+    larger: $base * power($ratio, 2),
+    largest: $base * power($ratio, 3)
+  );
+
+  @return $map;
+
+}
