@@ -1,0 +1,20 @@
+@mixin generate-unit-variables($map, $prefix, $scale: 'default', $round: false) {
+  
+  $converted-map: $map;
+
+  @each $size, $value in $converted-map {
+
+    @if $round {
+      $value: unit-round($value, $scale);
+    }
+    @else {
+      $value: unit($value, $scale);
+    }
+
+    $converted-map: map-merge($converted-map, (#{$size}: $value));
+
+  }
+
+  @include generate-variables($converted-map, $prefix);
+
+}

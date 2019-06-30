@@ -1,0 +1,22 @@
+@mixin generate-variables($variable, $prefix) {
+  
+  @if type-of($variable) == 'map' {
+
+    @each $key, $value in $variable {
+
+      @if $key == 'default' {
+        --#{$prefix}: #{$value};
+        
+      }
+      @else {
+        --#{$prefix}--#{$key}: #{$value};
+      }
+  
+    }
+
+  }
+  @else {
+    --#{$prefix}: #{$variable};
+  }  
+
+}
