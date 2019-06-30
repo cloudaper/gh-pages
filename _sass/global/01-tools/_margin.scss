@@ -1,0 +1,11 @@
+@function margin($size: 'default', $scale: 'default') {
+
+  @if map-has-key($paddings, $size) {
+    @return unit-round(map-deep-get($margins, $size), $scale);
+  }
+  @else {
+    @error '\'#{$size}\' key is not defined in $margins.';
+    @return false;
+  }
+
+}
