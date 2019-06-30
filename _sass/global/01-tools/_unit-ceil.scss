@@ -1,0 +1,5 @@
+@function unit-ceil($size: 'default', $scale: 'default') {
+
+  @return ceil(unit($size, $scale));
+
+}

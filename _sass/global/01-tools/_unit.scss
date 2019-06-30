@@ -1,0 +1,9 @@
+@function unit($size: 'default', $scale: 'default') {
+
+  $selected-modular-scale: modular-scale(map-deep-get($modular-scale, $scale, 'base'), map-deep-get($modular-scale, $scale, 'ratio'));
+
+  $unit: map-deep-get($selected-modular-scale, $size);
+
+  @return $unit + 0rem;
+
+}
