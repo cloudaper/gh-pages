@@ -1,5 +1,7 @@
 @include generate-variable-media-queries(
   (
     ($baseline-unit, 'responsive-baseline-unit', false),
+    ($paddings, 'responsive-padding', 'round'),
+    ($margins, 'responsive-margin', 'round'),
   )
 );

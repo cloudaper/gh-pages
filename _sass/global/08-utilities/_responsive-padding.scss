@@ -1,0 +1,32 @@
+@each $size, $value in $paddings {
+  
+  $class-suffix: null;
+
+  @if $size != 'default' {
+    $class-suffix: '--'+$size;
+  }
+
+  .u-responsive-padding {
+    &#{$class-suffix} {
+      padding: var(--responsive-padding#{$class-suffix});
+    }
+
+    &-top#{$class-suffix} {
+      padding-top: var(--responsive-padding#{$class-suffix});
+    }
+
+    &-right#{$class-suffix} {
+      padding-right: var(--responsive-padding#{$class-suffix});
+    }
+
+    &-bottom#{$class-suffix} {
+      padding-bottom: var(--responsive-padding#{$class-suffix});
+    }
+
+    &-left#{$class-suffix} {
+      padding-left: var(--responsive-padding#{$class-suffix});
+    }
+
+  }
+  
+}

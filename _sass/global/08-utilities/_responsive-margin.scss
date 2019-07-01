@@ -1,0 +1,32 @@
+@each $size, $value in $margins {
+  
+  $class-suffix: null;
+
+  @if $size != 'default' {
+    $class-suffix: '--'+$size;
+  }
+
+  .u-responsive-margin {
+    &#{$class-suffix} {
+      margin: var(--responsive-margin#{$class-suffix});
+    }
+
+    &-top#{$class-suffix} {
+      margin-top: var(--responsive-margin#{$class-suffix});
+    }
+
+    &-right#{$class-suffix} {
+      margin-right: var(--responsive-margin#{$class-suffix});
+    }
+
+    &-bottom#{$class-suffix} {
+      margin-bottom: var(--responsive-margin#{$class-suffix});
+    }
+
+    &-left#{$class-suffix} {
+      margin-left: var(--responsive-margin#{$class-suffix});
+    }
+
+  }
+  
+}
