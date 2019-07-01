@@ -1,0 +1,28 @@
+@function font-size($size: 'default', $margin: false, $font-family: false, $scale: 'default') {
+
+  $font-size: unit($size, $scale);
+  $line-height: line-height($size, $margin, $scale);
+
+  // Baseline correction
+  @if $font-family and map-has-key($font-baseline-ratios, $font-family) {
+    
+    $baseline-ratio: map-deep-get($font-baseline-ratios, $font-family);
+    $offset: $font-size * $baseline-ratio + ($line-height - $font-size) / 2;
+
+    @return (
+      'font-size': $font-size,
+      'line-height': $line-height,
+      'offset': $offset
+    );
+
+  }
+  @else {
+
+    @return (
+      'font-size': $font-size,
+      'line-height': $line-height
+    );
+
+  }
+
+}

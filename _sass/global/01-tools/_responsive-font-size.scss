@@ -1,0 +1,32 @@
+@mixin responsive-font-size($prefix, $font-family: false, $margin-top: false, $important: false) {
+  
+  @if $important {
+    $important: ' !important';
+  }
+  @else {
+    $important: '';
+  }
+
+  line-height: unquote("var(--#{$prefix}--line-height)#{$important}");
+  --local-line-height: var(--#{$prefix}--line-height)#{$important};
+
+  font-size: unquote("var(--#{$prefix}--font-size)#{$important}");
+  --local-font-size: var(--#{$prefix}--font-size)#{$important};
+
+  @if $margin-top == 'line-height' {
+    margin-top: unquote("var(--#{$prefix}--line-height)#{$important}");
+  }
+  @else if $margin-top == 'none' {
+    margin-top: 0;
+  }
+
+  // Baseline correction
+  @if $font-family and map-has-key($font-baseline-ratios, $font-family) {
+    padding-top: unquote("var(--#{$prefix}--offset)#{$important}");
+    margin-bottom: unquote("calc(-1 * var(--#{$prefix}--offset))#{$important}");
+  }
+  @else {
+    margin-bottom: 0;
+  }
+
+}
