@@ -1,0 +1,10 @@
+$body-font-family: 'roboto';
+
+$responsive-body: (
+  smaller: (
+    font-size('default', false, $body-font-family)
+  ),
+  default: (
+    font-size('default', false, $body-font-family)
+  )
+);

@@ -1,0 +1,6 @@
+body {
+  $body-font-weight: 'regular' !default;
+  $body-font-style: normal !default;
+  @include font-family($body-font-family, $body-font-weight, $body-font-style);
+  @include responsive-font-size('responsive-body');
+}
