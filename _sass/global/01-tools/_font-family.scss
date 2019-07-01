@@ -1,0 +1,26 @@
+@mixin font-family($font-family, $font-weight: 'regular', $font-style: normal) {
+
+  @if map-has-key($font-families, $font-family) {
+    font-family: map-deep-get($font-families, $font-family);
+  }
+  @else {
+    @error '\'#{$font-family}\' font family is not defined.';
+  }
+
+  @if map-has-key($font-weights, $font-family) and map-has-key(map-deep-get($font-weights, $font-family), $font-weight) {
+    font-weight: map-deep-get($font-weights, $font-family, $font-weight);
+  }
+  @else {
+    @error '\'#{$font-weight}\' font weight is not defined for \'#{$font-family}\' font family.';
+  }
+
+  @if map-has-key($font-styles, $font-family) 
+      and map-has-key(map-deep-get($font-styles, $font-family), $font-weight)
+      and index(map-deep-get($font-styles, $font-family, $font-weight), $font-style) {
+    font-style: $font-style;
+  }
+  @else {
+    @error '\'#{$font-style}\' font style is not defined for (\'#{$font-weight}\') weight \'#{$font-family}\' font family.';
+  }
+
+}
