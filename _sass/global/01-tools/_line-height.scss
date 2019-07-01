@@ -1,0 +1,12 @@
+@function line-height($size: 'default', $margin: false, $scale: 'default') {
+  
+  $font-size: unit($size, $scale);
+  $line-height: round($optimal-line-height * $font-size);
+
+  @if ($line-height / $font-size) < $minimal-line-height and $margin != 'top' {
+    $line-height: ceil($minimal-line-height * $font-size);
+  }
+
+  @return $line-height;
+  
+}
