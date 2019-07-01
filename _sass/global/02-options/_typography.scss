@@ -1,0 +1,36 @@
+$font-families: (
+  'futura': 'Futura',
+  'roboto': 'Roboto'
+);
+
+$font-weights: (
+  'futura': (
+    'medium': 500
+  ),
+  'roboto': (
+    'light': 300,
+    'regular': 400,
+    'medium': 500,
+    'bold': 700
+  )
+);
+
+$font-styles: (
+  'futura': (
+    'medium': normal
+  ),
+  'roboto': (
+    'light': normal,
+    'regular': (
+      normal,
+      italic
+    ),
+    'medium': normal,
+    'bold': normal
+  )
+);
+
+$font-baseline-ratios: (
+  'futura': 0.271,
+  'roboto': 0.158203
+);

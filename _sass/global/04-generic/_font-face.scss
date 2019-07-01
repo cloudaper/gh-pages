@@ -1,0 +1,29 @@
+// Futura Medium
+@font-face {
+  font-family: 'Futura';
+  font-weight: 500;
+  font-display: swap;
+  src: // URW
+    local('Futura-Med'),
+    local('FuturaMed'),
+    local('Futura Medium'),
+    local('FuturaPro-Medium'),
+    local('Futura Pro Medium'),
+    // Bitstream
+    local('FuturaBT-Medium'),
+    local('FuturaBT Medium'),
+    // Tilde
+    local('FuturaTL-Medium'),
+    local('Futura TL Medium'),
+    // ParaType
+    local('FuturaPT-Medium'),
+    local('Futura PT Medium'),
+    // Linotype
+    local('FuturaStd-Medium'),
+    local('Futura Std Medium'),
+    local('Futura LT Medium'),
+    local('FuturaLTPro-Medium'),
+    local('Futura LT Pro Medium'),
+    url('../assets/global/fonts/futura-medium-lite/futura-medium.woff2') format('woff2'),
+    url('../assets/global/fonts/futura-medium-lite/futura-medium.woff') format('woff');
+}
