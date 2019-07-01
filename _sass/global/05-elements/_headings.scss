@@ -1,0 +1,36 @@
+h1,
+.alpha {
+  @include font-family('futura', 'medium');
+  @include responsive-font-size('responsive-h1', false, 'line-height');
+}
+
+h2,
+.beta {
+  @include font-family('roboto', 'light');
+  @include responsive-font-size('responsive-h2', false, 'line-height');
+}
+
+h3,
+.gamma {
+  @include font-family('roboto', 'light');
+  @include responsive-font-size('responsive-h3', false, 'line-height');
+}
+
+h4,
+.delta {
+  @include font-family('roboto', 'regular');
+  @include responsive-font-size('responsive-h4', false, 'line-height');
+}
+
+h5,
+.epsilon {
+  @include font-family('roboto', 'medium');
+  @include responsive-font-size('responsive-h5', false, 'line-height');
+  text-transform: uppercase;
+}
+
+h6,
+.zeta {
+  @include font-family('roboto', 'medium');
+  @include responsive-font-size('responsive-h6', false, 'line-height');
+}

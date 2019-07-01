@@ -8,3 +8,54 @@ $responsive-body: (
     font-size('default', false, $body-font-family)
   )
 );
+
+$responsive-headings: (
+  h1: (
+    smaller: (
+      font-size('largest', false, 'futura')
+    ),
+    default: (
+      font-size('largest', false, 'futura')
+    )    
+  ),
+  h2: (
+    smaller: (
+      font-size('largest', false, 'roboto')
+    ),
+    default: (
+      font-size('largest', false, 'roboto')
+    )    
+  ),
+  h3: (
+    smaller: (
+      font-size('larger', false, 'roboto')
+    ),
+    default: (
+      font-size('larger', false, 'roboto')
+    )
+  ),
+  h4: (
+    smaller: (
+      font-size('large', false, 'roboto')
+    ),
+    default: (
+      font-size('large', false, 'roboto')
+    )
+  ),
+  h5: (
+    smaller: (
+      font-size('default', false, 'roboto')
+    ),
+    default: (
+      font-size('default', false, 'roboto')
+    )
+  ),
+  h6: (
+    smaller: (
+      font-size('default', false, 'roboto')
+    ),
+    default: (
+      font-size('default', false, 'roboto')
+    )    
+  )
+);
