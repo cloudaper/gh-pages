@@ -1,0 +1,36 @@
+@function flat-map($map, $separator: '-', $previous-key: '', $unique-id: unique-id()) {
+
+  @if not (variable-exists(flat-map-result)) {
+    $flat-map-result: () !global;
+  }
+
+  @if not map-has-key($flat-map-result, $unique-id) {
+    $flat-map-result: map-merge($flat-map-result, (#{$unique-id}: ())) !global;
+  }
+
+  @each $key, $value in $map {
+
+    @if type-of($value) == 'map' {
+      $nic: flat-map($value, $separator, $previous-key+$key+$separator, $unique-id);
+    }
+    @else {
+      $append: ($previous-key+$key: $value);
+      $flat-map-result: map-merge(
+        $flat-map-result,
+        (
+          #{$unique-id}: (
+            map-merge(
+              map-get($flat-map-result, $unique-id),
+              $append
+            )
+          )
+        )
+      ) !global;
+
+    }
+
+  }
+
+  @return map-get($flat-map-result, $unique-id);  
+
+}
