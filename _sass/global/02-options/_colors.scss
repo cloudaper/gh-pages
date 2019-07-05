@@ -1,0 +1,23 @@
+$colors: (
+  brand: (
+    brand-blue: rgb(12,64,132),
+    pale-blue: (
+      1: rgb(8,102,216),
+      2: rgb(26,141,255),
+      3: rgb(105,197,247),
+      4: rgb(182,226,255)
+    ),
+    bright-blue: (
+      1: rgb(0,195,255),
+      2: rgb(51,207,255),
+      3: rgb(127,225,255),
+      4: rgb(204,243,255)
+    ),
+    dark-blue: rgb(0,36,71),
+    darker-blue: rgb(0,26,48),
+    darkest-blue: rgb(0,18,33)
+  ),
+  'black': rgb(0,0,0),
+  'white': rgb(255,255,255),
+  'red': rgb(255,0,0)
+);

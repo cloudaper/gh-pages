@@ -1,0 +1,56 @@
+$color-pairs: (
+  brand: (
+    brand-blue: (
+      map-deep-get($colors, 'brand', 'brand-blue'),
+      map-deep-get($colors, 'white')
+    ),
+    pale-blue: (
+      1: (
+        map-deep-get($colors, 'brand', 'pale-blue', 1),
+        map-deep-get($colors, 'white')
+      ),
+      2: (
+        map-deep-get($colors, 'brand', 'pale-blue', 2),
+        map-deep-get($colors, 'brand', 'dark-blue')
+      ),
+      3: (
+        map-deep-get($colors, 'brand', 'pale-blue', 3),
+        map-deep-get($colors, 'brand', 'dark-blue')
+      ),
+      4: (
+        map-deep-get($colors, 'brand', 'pale-blue', 4),
+        map-deep-get($colors, 'brand', 'dark-blue')
+      )
+    ),
+    bright-blue: (
+      1: (
+        map-deep-get($colors, 'brand', 'bright-blue', 1),
+        map-deep-get($colors, 'white')
+      ),
+      2: (
+        map-deep-get($colors, 'brand', 'bright-blue', 2),
+        map-deep-get($colors, 'brand', 'dark-blue')
+      ),
+      3: (
+        map-deep-get($colors, 'brand', 'bright-blue', 3),
+        map-deep-get($colors, 'brand', 'dark-blue')
+      ),
+      4: (
+        map-deep-get($colors, 'brand', 'bright-blue', 4),
+        map-deep-get($colors, 'brand', 'dark-blue')
+      )
+    ),
+    dark-blue: (
+      map-deep-get($colors, 'brand', 'dark-blue'),
+      map-deep-get($colors, 'white')
+    ),
+    darker-blue: (
+      map-deep-get($colors, 'brand', 'darker-blue'),
+      map-deep-get($colors, 'white')
+    ),
+    darkest-blue: (
+      map-deep-get($colors, 'brand', 'darkest-blue'),
+      map-deep-get($colors, 'white')
+    )
+  )
+);
