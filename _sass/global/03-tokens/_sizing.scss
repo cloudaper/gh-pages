@@ -3,3 +3,6 @@ $margins: (
 );
 
 $paddings: $margins;
+
+$border-width: unit(map-deep-get($margins, 'default')) / 4;
+$divider-width: $border-width / 4;
