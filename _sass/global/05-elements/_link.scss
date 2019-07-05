@@ -1,0 +1,52 @@
+a {
+  text-decoration: none;
+  color: unset;
+
+  // Styles only for solo elements
+  &:not([class*="o-"]):not([class*="c-"]) {
+    position: relative;
+    transition-property: color;
+    transition-duration: map-deep-get($durations, 'shorter');
+    transition-timing-function: ease-in;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1em;
+      border-style: solid;
+      border-width: 0;
+      border-bottom-width: 0.25em;
+      opacity: power(map-deep-get($transparency-levels, 'reduced'), 3);
+      transition-property: opacity, background-color, border-color;
+      transition-duration: map-deep-get($durations, 'shorter');
+      transition-timing-function: ease-in;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+
+      &::after {
+        background: currentColor;
+      }
+
+    }
+
+    &:active {
+      transition-duration: map-deep-get($durations, 'shortest');
+
+      &::after {
+        opacity: power(map-deep-get($transparency-levels, 'reduced'), 2);
+        transition-duration: map-deep-get($durations, 'shortest');
+        background: currentColor;
+      }
+
+    }
+
+  }
+
+}
