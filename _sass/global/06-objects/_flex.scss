@@ -1,0 +1,111 @@
+.o-flex {
+  
+  & {
+    display: flex;
+  }
+
+  /* flex-direction */
+
+  &--row-reverse {
+    flex-direction: column-reverse;
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  /* justify-content */
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &--space-between {
+    justify-content: space-between;
+  }
+
+  &--space-around {
+    justify-content: space-around;
+  }
+
+  &--space-evenly {
+    justify-content: space-evenly;
+  }
+
+  /* align-items */
+
+  &--align {
+    
+    &-start {
+      align-items: start;
+    }
+
+    &-center {
+      align-items: center;
+    }
+
+    &-end {
+      align-items: flex-end;
+    }
+
+    &-baseline {
+      align-items: baseline;
+    }
+  
+  }
+
+  /* wrap */
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  /* flex children */
+
+  &__item {
+
+    &--grow {
+      flex-grow: 1;
+    }
+
+    /* align-self */
+
+    &--start {
+      align-self: start;
+    }
+
+    &--center {
+      align-self: center;
+    }
+
+    &--end {
+      align-self: flex-end;
+    }
+
+    &--baseline {
+      align-self: baseline;
+    }
+  
+    &--order {
+      @for $i from 1 through 5 {
+        &[data-order="#{$i}"] {
+          order: $i;
+        }
+      }
+    }
+
+  }
+
+}
