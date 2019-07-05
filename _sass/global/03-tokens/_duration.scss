@@ -1,0 +1,9 @@
+$durations: (
+  shortest: $duration-base-unit / (1.4 * 1.4 * 1.4),
+  shorter: $duration-base-unit / (1.4 * 1.4),
+  short: $duration-base-unit / 1.4,
+  default: $duration-base-unit,
+  long: $duration-base-unit * 1.4,
+  longer: $duration-base-unit * (1.4 * 1.4),
+  longest: $duration-base-unit * (1.4 * 1.4 * 1.4)
+);
