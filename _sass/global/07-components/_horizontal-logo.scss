@@ -1,0 +1,27 @@
+.c-horizontal-logo {
+  --horizontal-logo-height-local: var(--horizontal-logo-height, var(--responsive-padding));
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__mark {
+    height: var(--horizontal-logo-height-local);
+    fill: currentColor;
+  }
+
+  &__wordmark {
+    font-family: map-deep-get($font-families, 'futura');
+    font-weight: map-deep-get($font-weights, 'futura', 'medium');
+    font-size: calc(1.13125*(var(--horizontal-logo-height-local)/2));
+    line-height: 1;
+    position: relative;
+    top: calc(0.2875*(var(--horizontal-logo-height-local)/2));
+    margin-left: calc(0.75*(var(--horizontal-logo-height-local)/2));
+  }
+
+  &--margin-high {
+    --horizontal-logo-height: var(--responsive-margin);
+  }
+
+}
