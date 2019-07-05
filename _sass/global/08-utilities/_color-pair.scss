@@ -1,0 +1,8 @@
+@each $color-pair in map-keys(flat-map($color-pairs)) {
+
+  .u-color-pair--#{$color-pair} {
+    background-color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'opaque'));
+    color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default'));
+  }
+
+}
