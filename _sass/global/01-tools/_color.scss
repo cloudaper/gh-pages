@@ -1,0 +1,8 @@
+@function color($transparency: 'default', $color...) {
+  
+  $color: map-deep-get($colors, $color...);
+  $transparency: map-deep-get($transparency-levels, $transparency);
+
+  @return rgba($color, $transparency);
+
+}

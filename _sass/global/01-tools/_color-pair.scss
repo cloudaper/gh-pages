@@ -1,0 +1,4 @@
+@mixin color-pair($background...) {
+  background-color: rgba(nth(map-deep-get($color-pairs, $background...), 1), map-deep-get($transparency-levels, 'opaque'));
+  color: rgba(nth(map-deep-get($color-pairs, $background...), 2), map-deep-get($transparency-levels, 'default'));
+}
