@@ -1,8 +1,10 @@
 $breakpoints: (
   width: (
-    smaller: 600px
+    smaller: 600px,
+    small: 900px
   ),
   height: (
-    smaller: 400px
+    smaller: 400px,
+    small: 600px
   )
 );

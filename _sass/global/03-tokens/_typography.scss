@@ -4,6 +4,9 @@ $responsive-body: (
   smaller: (
     font-size('default', false, $body-font-family)
   ),
+  small: (
+    font-size('default', false, $body-font-family)
+  ),
   default: (
     font-size('default', false, $body-font-family)
   )
@@ -14,12 +17,18 @@ $responsive-headings: (
     smaller: (
       font-size('largest', false, 'futura')
     ),
+    small: (
+      font-size('largest', false, 'futura')
+    ),
     default: (
       font-size('largest', false, 'futura')
     )    
   ),
   h2: (
     smaller: (
+      font-size('largest', false, 'roboto')
+    ),
+    small: (
       font-size('largest', false, 'roboto')
     ),
     default: (
@@ -30,12 +39,18 @@ $responsive-headings: (
     smaller: (
       font-size('larger', false, 'roboto')
     ),
+    small: (
+      font-size('larger', false, 'roboto')
+    ),
     default: (
       font-size('larger', false, 'roboto')
     )
   ),
   h4: (
     smaller: (
+      font-size('large', false, 'roboto')
+    ),
+    small: (
       font-size('large', false, 'roboto')
     ),
     default: (
@@ -46,12 +61,18 @@ $responsive-headings: (
     smaller: (
       font-size('default', false, 'roboto')
     ),
+    small: (
+      font-size('default', false, 'roboto')
+    ),
     default: (
       font-size('default', false, 'roboto')
     )
   ),
   h6: (
     smaller: (
+      font-size('default', false, 'roboto')
+    ),
+    small: (
       font-size('default', false, 'roboto')
     ),
     default: (

@@ -1,10 +1,14 @@
 $modular-scale: (
   smaller: (
     base: 1,
-    ratio: 1.5
+    ratio: 1.4
+  ),
+  small: (
+    base: 1,
+    ratio: 1.4
   ),
   default: (
     base: 1,
-    ratio: 1.5
+    ratio: 1.4
   )
 );
