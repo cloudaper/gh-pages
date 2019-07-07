@@ -5,4 +5,9 @@
     color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default'));
   }
 
+  .u-inverse-color-pair--#{$color-pair} {
+    background-color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'opaque'));
+    color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default'));
+  }
+
 }
