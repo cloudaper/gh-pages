@@ -1,0 +1,79 @@
+// Required defaults
+
+.o-reveal-footer,
+.u-reveal-footer {
+  --reveal-footer-content-height-local: var(--reveal-footer-content-height, var(--responsive-padding));
+  --reveal-footer-padding-local: var(--reveal-footer-padding, var(--local-padding, var(--responsive-padding)));
+  --reveal-footer-background-local: var(--reveal-footer-background, var(--local-background-color, white));
+  --reveal-footer-body-background-local: var(--reveal-footer-body-background, white);
+  --reveal-footer-height-local: calc(
+    var(--reveal-footer-content-height-local)
+    + 2 * var(--reveal-footer-padding-local)
+  );
+}
+
+.o-reveal-footer {
+  position: fixed;
+  bottom: 0;
+  height: var(--reveal-footer-height-local);
+  width: 100%;
+  background-color: var(--reveal-footer-background-local);
+}
+
+// Utility class that has to be applied on body tag
+.u-reveal-footer {
+  // Body bottom padding has to match footer height
+  padding-bottom: var(--reveal-footer-height-local);
+  // Body background should be the same as footer background
+  background-color: var(--reveal-footer-background-local);
+
+  &.u-conceal-header {
+    background: linear-gradient(0deg, var(--reveal-footer-background-local) 50%, var(--conceal-header-background-local) 50%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  // Whole page content has to be wrapped in an element
+  &:not(.u-conceal-header) > *:not(noscript):first-child,
+  &:not(.u-conceal-header) > noscript:first-child + *,
+  &.u-conceal-header > *:not(noscript):first-child + *,
+  &.u-conceal-header > noscript:first-child + * + * {
+    // Page content has to be above footer
+    position: relative;
+    z-index: 1;
+    // Page content has to have background to hide the footer
+    background-color: var(--reveal-footer-body-background-local);
+  }
+
+  &--drop-shadow {
+
+    &:not(.u-conceal-header) > *:not(noscript):first-child,
+    &:not(.u-conceal-header) > noscript:first-child + *,
+    &.u-conceal-header > *:not(noscript):first-child + *,
+    &.u-conceal-header > noscript:first-child + * + * {
+      box-shadow: 0 0 1rem 1rem color('suppressed', 'black');
+    }
+
+  }
+
+  // Forces reveal footer even if content is not higher than viewport
+  &--force {
+    display: flex;
+    flex-direction: column;
+
+    > *:not(noscript):first-child,
+    > noscript:first-child + * {
+      flex-grow: 1;
+    }
+
+  }
+
+  &--force {
+    min-height: calc(100% + var(--reveal-footer-height-local));
+  }
+
+  &--force.u-conceal-header--force {
+    min-height: calc(100% + var(--reveal-footer-height-local) + var(--conceal-header-height-local));
+  }
+
+}
