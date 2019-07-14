@@ -1,0 +1,3 @@
+$meaningful-colors: (
+  error: map-deep-get($colors, 'red')
+);
