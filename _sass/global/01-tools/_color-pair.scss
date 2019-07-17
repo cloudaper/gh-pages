@@ -3,7 +3,17 @@
   color: rgba(nth(map-deep-get($color-pairs, $background...), 2), map-deep-get($transparency-levels, 'default'));
 }
 
+@mixin color-pair--fill($background...) {
+  @include color-pair($background...);
+  fill: rgba(nth(map-deep-get($color-pairs, $background...), 2), map-deep-get($transparency-levels, 'default'));
+}
+
 @mixin inverse-color-pair($background...) {
   background-color: rgba(nth(map-deep-get($color-pairs, $background...), 2), map-deep-get($transparency-levels, 'opaque'));
   color: rgba(nth(map-deep-get($color-pairs, $background...), 1), map-deep-get($transparency-levels, 'default'));
+}
+
+@mixin inverse-color-pair--fill($background...) {
+  @include inverse-color-pair($background...);
+  fill: rgba(nth(map-deep-get($color-pairs, $background...), 1), map-deep-get($transparency-levels, 'default'));
 }
