@@ -2,5 +2,6 @@ $transparency-levels: (
   opaque: 1,
   default: 1 - 3 * $transparency-base-unit,
   reduced: 1 - 6 * $transparency-base-unit,
+  more-reduced: 1 - 12 * $transparency-base-unit,
   suppressed: 6 * $transparency-base-unit,
 );
