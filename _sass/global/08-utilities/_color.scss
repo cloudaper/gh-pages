@@ -1,0 +1,13 @@
+@each $color in map-keys(flat-map($colors)) {
+
+  .u-color--#{$color} {
+    color: rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'default'));
+    --local-color: #{rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'default'))};
+
+    &.u-color--fill {
+      fill: rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'default'));
+    }
+
+  }
+
+}
