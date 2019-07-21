@@ -1,0 +1,223 @@
+@keyframes pulsate {
+
+  0% {
+    opacity: map-deep-get($transparency-levels, 'opaque');
+  }
+
+  50% {
+    opacity: map-deep-get($transparency-levels, 'more-reduced');
+  }
+
+  100% {
+    opacity: map-deep-get($transparency-levels, 'opaque');
+  }
+
+}
+
+@keyframes top-right-border {
+
+  0% {
+    width: 100%;
+    height: 100%;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+
+    border-top-color: inherit;
+    border-right-color: inherit;
+  }
+
+  12.5% {
+    width: 0%;
+    height: 100%;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+
+    border-top-color: inherit;
+    border-right-color: inherit;
+  }
+
+  12.51% {
+    border-top-color: transparent;
+  }
+
+  25% {
+    width: 0%;
+    height: 0%;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+
+    border-top-color: transparent;
+    border-right-color: inherit;
+  }
+
+  25.01% {
+    border-right-color: transparent;
+  }
+
+  50% {
+    width: 0%;
+    height: 0%;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+
+  50.01% {
+    border-top-color: inherit;
+  }
+
+  67.5% {
+    width: 100%;
+    height: 0%;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+
+    border-top-color: inherit;
+    border-right-color: transparent;
+  }
+
+  67.51% {
+    border-right-color: inherit;
+  }
+
+  75% {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+
+    border-top-color: inherit;
+    border-right-color: inherit;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+
+    border-top-color: inherit;
+    border-right-color: inherit;
+  }
+
+}
+
+@keyframes bottom-left-border {
+
+  0% {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+  }
+
+  25% {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+  }
+
+  37.5% {
+    width: 0%;
+    height: 100%;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+  }
+
+  37.51% {
+    border-bottom-color: transparent;
+  }
+
+  50% {
+    width: 0%;
+    height: 0%;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+
+    border-bottom-color: transparent;
+    border-left-color: inherit;
+  }
+
+  50.01% {
+    border-left-color: transparent;
+  }
+
+  75% {
+    width: 0%;
+    height: 0%;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  75.01% {
+    border-bottom-color: inherit;
+  }
+
+  87.5% {
+    width: 100%;
+    height: 0%;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+
+    border-bottom-color: inherit;
+    border-left-color: transparent;
+  }
+
+  87.51% {
+    border-left-color: inherit;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+  }
+
+}

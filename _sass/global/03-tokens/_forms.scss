@@ -1,0 +1,13 @@
+$form-states-transparency: (
+  input: (
+    default: map-deep-get($transparency-levels, 'default'),
+    hover: map-deep-get($transparency-levels, 'more-reduced'),
+    active: map-deep-get($transparency-levels, 'opaque'),
+    disabled: map-deep-get($transparency-levels, 'suppressed')
+  ),
+  button: (
+    default: map-deep-get($transparency-levels, 'default'),
+    hover: map-deep-get($transparency-levels, 'more-reduced'),
+    active: map-deep-get($transparency-levels, 'opaque')
+  )
+);
