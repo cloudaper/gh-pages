@@ -1,0 +1,16 @@
+---
+layout: global/skeleton
+body_classes:
+  - u-reveal-footer
+  - u-reveal-footer--force
+  - u-reveal-footer--drop-shadow
+---
+<div>
+  {{ content }}
+</div>
+{% assign reveal_footer = page.reveal_footer | default: layout.reveal_footer %}
+{% include objects/global/conceal-header-reveal-footer/default.html
+  pass_classes=reveal_footer.pass_classes
+  pass_styles=reveal_footer.pass_styles
+  props=reveal_footer.props
+%}

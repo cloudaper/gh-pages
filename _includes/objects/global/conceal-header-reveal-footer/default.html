@@ -1,0 +1,70 @@
+{% comment %}
+  props:
+    - type [string: conceal-header|reveal-footer = reveal-footer]
+    - content [content helper – see _includes/helpers/content.html for props]
+{% endcomment %}
+
+{% comment %}
+  Preprocess passed classes and styles
+{% endcomment %}
+
+{% assign classes = '' | split: '' %}
+{% if include.pass_classes.first %}
+  {% assign classes = classes | concat: include.pass_classes %}
+{% elsif include.pass_classes and include.pass_classes.size != 0 %}
+  {% assign passed_classes = include.pass_classes | split: ' ' %}
+  {% assign classes = classes | concat: passed_classes %}
+{% endif %}
+
+{% assign styles = '' | split: '' %}
+{% if include.pass_styles.first %}
+  {% assign styles = styles | concat: include.pass_styles %}
+{% elsif include.pass_styles and include.pass_styles.size != 0 %}
+  {% assign passed_styles = include.pass_styles | split: ';' %}
+  {% for passed_style in passed_styles %}
+    {% assign appended = passed_style | append: ';' %}
+    {% assign styles = styles | push: appended %}
+  {% endfor %}
+{% endif %}
+
+{% comment %}
+  Process props
+{% endcomment %}
+
+{% assign type = include.props.type | default: 'reveal-footer' %}
+
+{% comment %}
+  Merge classes and styles
+{% endcomment %}
+
+{% assign object_class = 'o-' | append: type %}
+{% assign classes = classes | push: object_class %}
+{% assign classes = classes | push: 'u-ignore-baseline' %}
+{% assign classes = classes | push: 'u-margin--none' %}
+
+{% assign styles = styles | push: 'max-width: unset;' %}
+
+{% comment %}
+  HTML
+{% endcomment %}
+
+<div
+  {% if classes.size > 0 %}
+    class="{{ classes | join: ' ' | strip }}"
+  {% endif %}
+  {% if styles.size > 0 %}
+    style="{{ styles | join: ' ' | strip }}"
+  {% endif %}
+>
+  {% include helpers/content.html content=include.props.content %}
+</div>
+
+{% comment %}
+  Cleanup variables
+{% endcomment %}
+
+{% assign classes = nil %}
+{% assign styles = nil %}
+
+{% assign type = nil %}
+{% assign content = nil %}

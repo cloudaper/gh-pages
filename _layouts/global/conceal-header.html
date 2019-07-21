@@ -1,0 +1,19 @@
+---
+layout: global/skeleton
+body_classes:
+  - u-conceal-header
+  - u-conceal-header--force
+  - u-conceal-header--drop-shadow
+conceal_header:
+  props:
+    type: conceal-header
+---
+{% assign conceal_header = page.conceal_header | default: layout.conceal_header %}
+{% include objects/global/conceal-header-reveal-footer/default.html
+   pass_classes=reveal_footer.pass_classes
+   pass_styles=reveal_footer.pass_styles
+   props=conceal_header.props
+%}
+<div>
+  {{ content }}
+</div>
