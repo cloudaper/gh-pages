@@ -1,0 +1,76 @@
+{% comment %}
+  props:
+    - title [string: Markdown] *
+    - title_tag [string: HTML tag = h1]
+    - title_style [string: alpha|beta|gamma|delta|epsilon|zeta = alpha]
+    - text [text: Markdown]
+    - text_keep_paragraphs [bool = false]
+    - content [content helper – see _includes/helpers/content.html for props]
+{% endcomment %}
+
+{% comment %}
+  Preprocess passed classes and styles
+{% endcomment %}
+
+{% assign classes = '' | split: '' %}
+{% if include.pass_classes.first %}
+  {% assign classes = classes | concat: include.pass_classes %}
+{% elsif include.pass_classes and include.pass_classes.size != 0 %}
+  {% assign passed_classes = include.pass_classes | split: ' ' %}
+  {% assign classes = classes | concat: passed_classes %}
+{% endif %}
+
+{% assign styles = '' | split: '' %}
+{% if include.pass_styles.first %}
+  {% assign styles = styles | concat: include.pass_styles %}
+{% elsif include.pass_styles and include.pass_styles.size != 0 %}
+  {% assign passed_styles = include.pass_styles | split: ';' %}
+  {% for passed_style in passed_styles %}
+    {% assign appended = passed_style | append: ';' %}
+    {% assign styles = styles | push: appended %}
+  {% endfor %}
+{% endif %}
+
+{% comment %}
+  Process props
+{% endcomment %}
+
+{% assign title = include.props.title | strip | markdownify | remove: '<p>' | remove: '</p>' %}
+{% assign title_tag = include.props.title_tag | default: 'h1' %}
+{% assign title_style = include.props.title_style | default: 'alpha' %}  
+{% assign text_keep_paragraphs = include.props.text_keep_paragraphs | default: false %}
+{% if include.props.text %}
+  {% if text_keep_paragraphs %}
+    {% assign text = include.props.text | strip | markdownify | prepend: '<div class="c-hero__text u-margin-top--none u-margin-top@width-large">' | append: '</div>' %}
+  {% else %}
+    {% assign text = include.props.text | strip | markdownify | remove: '<p>' | remove: '</p>' | prepend: '<p class="c-hero__text u-margin-top--none u-margin-top@width-large">' | append: '</p>' %}
+  {% endif %}
+{% endif %}
+
+{% assign classes = classes | push: 'c-hero' %}
+{% assign classes = classes | push: 'o-stack' %}
+{% assign classes = classes | push: 'u-responsive-padding' %}
+
+<div
+  {% if classes.size > 0 %}
+    class="{{ classes | join: ' ' | strip }}"
+  {% endif %}
+  {% if styles.size > 0 %}
+    style="{{ styles | join: ' ' | strip }}"
+  {% endif %}
+>
+  <{{ title_tag }} class="c-hero__title {{ title_style }} u-ignore-baseline">{{ title }}</{{ title_tag }}>
+  {% if include.props.content %}
+    {% include helpers/content.html content=include.props.content %}
+  {% endif %}
+  {{ text }}
+</div>
+
+{% capture cleanup %}
+  {% assign title = nil %}
+  {% assign title_tag = nil %}
+  {% assign title_style = nil %}
+  {% assign text = nil %}
+  {% assign text_keep_paragraphs = nil %}
+  {% assign content = nil %}
+{% endcapture %}
