@@ -1,0 +1,37 @@
+  {% assign classes = '' | split: '' %}
+
+  {% if include.variant %}
+    {% assign variant = 'c-logo-footer--' | append: include.variant %}
+    {% assign classes = classes | push: variant %}
+  {% endif %}
+
+  |{{ classes }}|
+
+  {% if include.link %}
+    {% assign classes = classes | push: 'c-logo-footer--link' %}
+  {% endif %}
+
+  |{{ classes }}|
+
+  {% if include.pass_classes %}
+    {% assign passed_classes = include.pass_classes | split: ' ' %}
+    {% assign classes = classes | concat: passed_classes %}
+  {% endif %}
+
+  |{{ passed_classes }}|
+
+  {% assign no_of_classes = classes | size %}
+
+|{{ classes }}|
+
+
+{%- if include.link %}
+<a href="{{ include.link }}" class="c-logo-footer{%- if no_of_classes != 0 %} {{ classes | join: ' ' }}{% endif -%}">
+  {% include components/global/horizontal-logo/default.html pass_classes='o-flex__item--grow' %}
+  <span class="c-logo-footer__link-text gamma">{{ include.link_text }}</span>
+</a>
+{%- else -%}
+<div class="c-logo-footer{%- if no_of_classes != 0 %} {{ classes | join: ' ' }}{% endif -%}">
+  {% include components/global/horizontal-logo/default.html pass_classes='o-flex__item--grow' %}
+</div>
+{%- endif -%}

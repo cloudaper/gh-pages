@@ -1,0 +1,26 @@
+.c-logo-footer {
+  $component: &;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+
+  &__link-text {
+    display: none;
+    margin: 0;
+  }
+
+  &--link:hover {
+    justify-content: center;
+
+    > *:first-child {
+      display: none;
+    }
+
+    #{$component}__link-text {
+      display: inline;
+    }
+
+  }
+
+}
