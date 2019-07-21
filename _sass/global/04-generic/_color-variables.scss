@@ -1,0 +1,7 @@
+:root {
+  
+  @each $color in map-keys(flat-map($colors)) {
+    --color-#{$color}: #{rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'opaque'))};
+  }
+
+}
