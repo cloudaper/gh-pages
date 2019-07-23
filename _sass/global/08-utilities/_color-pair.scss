@@ -1,25 +1,25 @@
 @each $color-pair in map-keys(flat-map($color-pairs)) {
 
   .u-color-pair--#{$color-pair} {
-    background-color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'opaque'));
-    --local-background-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'opaque'))};
-    color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default'));
-    --local-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default'))};
+    background-color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'opaque')) !important;
+    --local-background-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'opaque'))} !important;
+    color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default')) !important;
+    --local-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default'))} !important;
 
     &.u-color-pair--fill {
-      fill: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default'));
+      fill: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default')) !important;
     }
 
   }
 
   .u-inverse-color-pair--#{$color-pair} {
-    background-color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'opaque'));
-    --local-background-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'opaque'))};
-    color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default'));
-    --local-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default'))};
+    background-color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'opaque')) !important;
+    --local-background-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'opaque'))} !important;
+    color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default')) !important;
+    --local-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default'))} !important;
 
     &.u-inverse-color-pair--#{$color-pair} {
-      fill: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default'));
+      fill: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default')) !important;
     }
 
   }

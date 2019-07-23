@@ -1,11 +1,11 @@
 @each $color in map-keys(flat-map($colors)) {
 
   .u-color--#{$color} {
-    color: rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'default'));
-    --local-color: #{rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'default'))};
+    color: rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'default')) !important;
+    --local-color: #{rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'default'))} !important;
 
     &.u-color--fill {
-      fill: rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'default'));
+      fill: rgba(map-deep-get(flat-map($colors), $color), map-deep-get($transparency-levels, 'default')) !important;
     }
 
   }

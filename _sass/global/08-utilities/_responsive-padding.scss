@@ -8,28 +8,28 @@
 
   .u-responsive-padding {
     &#{$class-suffix} {
-      padding: var(--responsive-padding#{$class-suffix});
-      --local-padding: var(--responsive-padding#{$class-suffix});
+      padding: var(--responsive-padding#{$class-suffix}) !important;
+      --local-padding: var(--responsive-padding#{$class-suffix}) !important;
     }
 
     &-top#{$class-suffix} {
-      padding-top: var(--responsive-padding#{$class-suffix});
-      --local-padding-top: var(--responsive-padding#{$class-suffix});
+      padding-top: var(--responsive-padding#{$class-suffix}) !important;
+      --local-padding-top: var(--responsive-padding#{$class-suffix}) !important;
     }
 
     &-right#{$class-suffix} {
-      padding-right: var(--responsive-padding#{$class-suffix});
-      --local-padding-right: var(--responsive-padding#{$class-suffix});
+      padding-right: var(--responsive-padding#{$class-suffix}) !important;
+      --local-padding-right: var(--responsive-padding#{$class-suffix}) !important;
     }
 
     &-bottom#{$class-suffix} {
-      padding-bottom: var(--responsive-padding#{$class-suffix});
-      --local-padding-bottom: var(--responsive-padding#{$class-suffix});
+      padding-bottom: var(--responsive-padding#{$class-suffix}) !important;
+      --local-padding-bottom: var(--responsive-padding#{$class-suffix}) !important;
     }
 
     &-left#{$class-suffix} {
-      padding-left: var(--responsive-padding#{$class-suffix});
-      --local-padding-left: var(--responsive-padding#{$class-suffix});
+      padding-left: var(--responsive-padding#{$class-suffix}) !important;
+      --local-padding-left: var(--responsive-padding#{$class-suffix}) !important;
     }
 
   }

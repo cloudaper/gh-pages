@@ -8,28 +8,28 @@
 
   .u-responsive-margin {
     &#{$class-suffix} {
-      margin: var(--responsive-margin#{$class-suffix});
-      --local-margin: var(--responsive-margin#{$class-suffix});
+      margin: var(--responsive-margin#{$class-suffix}) !important;
+      --local-margin: var(--responsive-margin#{$class-suffix}) !important;
     }
 
     &-top#{$class-suffix} {
-      margin-top: var(--responsive-margin#{$class-suffix});
-      --local-margin-top: var(--responsive-margin#{$class-suffix});
+      margin-top: var(--responsive-margin#{$class-suffix}) !important;
+      --local-margin-top: var(--responsive-margin#{$class-suffix}) !important;
     }
 
     &-right#{$class-suffix} {
-      margin-right: var(--responsive-margin#{$class-suffix});
-      --local-margin-right: var(--responsive-margin#{$class-suffix});
+      margin-right: var(--responsive-margin#{$class-suffix}) !important;
+      --local-margin-right: var(--responsive-margin#{$class-suffix}) !important;
     }
 
     &-bottom#{$class-suffix} {
-      margin-bottom: var(--responsive-margin#{$class-suffix});
-      --local-margin-bottom: var(--responsive-margin#{$class-suffix});
+      margin-bottom: var(--responsive-margin#{$class-suffix}) !important;
+      --local-margin-bottom: var(--responsive-margin#{$class-suffix}) !important;
     }
 
     &-left#{$class-suffix} {
-      margin-left: var(--responsive-margin#{$class-suffix});
-      --local-margin-left: var(--responsive-margin#{$class-suffix});
+      margin-left: var(--responsive-margin#{$class-suffix}) !important;
+      --local-margin-left: var(--responsive-margin#{$class-suffix}) !important;
     }
 
   }
