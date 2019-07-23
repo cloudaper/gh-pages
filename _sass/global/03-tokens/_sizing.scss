@@ -4,5 +4,5 @@ $margins: (
 
 $paddings: $margins;
 
-$border-width: unit(map-deep-get($margins, 'default')) / 4;
-$divider-width: $border-width / 4;
+$border-width: round(strip-unit(unit(map-deep-get($margins, 'default')) / 4) * strip-unit(map-deep-get($baseline-unit, 'default')) + 0px);
+$divider-width: round($border-width / 4);
