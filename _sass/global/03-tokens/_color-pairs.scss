@@ -54,6 +54,10 @@ $color-pairs: (
     )
   ),
   greys: (
+    100: (
+      map-deep-get($colors, 'grays', 100),
+      map-deep-get($colors, 'black')
+    ),
     300: (
       map-deep-get($colors, 'grays', 300),
       map-deep-get($colors, 'black')
