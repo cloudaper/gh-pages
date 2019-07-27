@@ -1,0 +1,99 @@
+@mixin generate-margin-or-padding-utilities($margin-or-padding, $responsive: false, $scale: 'default', $condition: null) {
+
+  $suffix: null;
+
+  @if $scale != 'default' {
+
+    @if $condition {
+      $suffix: \@#{$condition}-#{$scale};
+    }
+    @else {
+      $suffix: \@#{$scale};
+    }
+    
+  }
+
+  $items: null;
+
+  @if $margin-or-padding == 'margin' {
+    $items: $margins;
+  }
+  @else if $margin-or-padding == 'padding' {
+    $items: $paddings;
+  }
+
+  $responsive-prefix: null;
+
+  @if $responsive {
+    $responsive-prefix: 'responsive-';
+  }
+
+  @each $size, $value in $items {
+    
+    $class-suffix: null;
+
+    @if $size != 'default' {
+      $class-suffix: '--'+$size;
+    }
+
+    .u-#{$responsive-prefix}#{$margin-or-padding} {
+      &#{$class-suffix}#{$suffix} {
+        #{$margin-or-padding}: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+        --local-#{$margin-or-padding}: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+      }
+
+      &-top#{$class-suffix}#{$suffix} {
+        #{$margin-or-padding}-top: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+        --local-#{$margin-or-padding}-top: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+      }
+
+      &-right#{$class-suffix}#{$suffix} {
+        #{$margin-or-padding}-right: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+        --local-#{$margin-or-padding}-right: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+      }
+
+      &-bottom#{$class-suffix}#{$suffix} {
+        #{$margin-or-padding}-bottom: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+        --local-#{$margin-or-padding}-bottom: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+      }
+
+      &-left#{$class-suffix}#{$suffix} {
+        #{$margin-or-padding}-left: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+        --local-#{$margin-or-padding}-left: var(--#{$responsive-prefix}#{$margin-or-padding}#{$class-suffix}) !important;
+      }
+
+    }
+    
+  }
+
+
+  .u-#{$margin-or-padding} {
+
+    &--none#{$suffix} {
+      #{$margin-or-padding}: 0 !important;
+      --local-#{$margin-or-padding}: 0 !important;
+    }
+
+    &-top--none#{$suffix} {
+      #{$margin-or-padding}-top: 0 !important;
+      --local-#{$margin-or-padding}-top: 0 !important;
+    }
+
+    &-right--none#{$suffix} {
+      #{$margin-or-padding}-right: 0 !important;
+      --local-#{$margin-or-padding}-right: 0 !important;
+    }
+
+    &-bottom--none#{$suffix} {
+      #{$margin-or-padding}-bottom: 0 !important;
+      --local-#{$margin-or-padding}-bottom: 0 !important;
+    }
+
+    &-left--none#{$suffix} {
+      #{$margin-or-padding}-left: 0 !important;
+      --local-#{$margin-or-padding}-left: 0 !important;
+    }
+
+  }
+
+}

@@ -1,0 +1,4 @@
+:root {
+  @include generate-unit-variables($margins, 'margin', 'default', true);
+  @include generate-unit-variables($paddings, 'padding', 'default', true);
+}

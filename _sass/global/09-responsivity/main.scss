@@ -5,6 +5,10 @@
   @include generate-responsive-variables($responsive-variables, $current-scale);
 
   // 08-utilities
+  @include generate-margin-or-padding-utilities('margin', false, $current-scale, $current-condition);
+  @include generate-margin-or-padding-utilities('padding', false, $current-scale, $current-condition);
+  @include generate-margin-or-padding-utilities('margin', true, $current-scale, $current-condition);
+  @include generate-margin-or-padding-utilities('padding', true, $current-scale, $current-condition);
   @include show-and-hide($current-scale, $current-condition);
 
 }
