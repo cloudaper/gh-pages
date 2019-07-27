@@ -6,3 +6,4 @@
 @import './typography';
 
 @import './forms'; // depends on ./transparency
+@import './responsive-variables'; // depends on ./sizing, ./transparency and ./typography

@@ -3,10 +3,10 @@
 @import './flat-map';
 @import './font-family';
 @import './font-size';
-@import './generate-hide-utility-media-queries';
 @import './generate-unit-variables';
 @import './generate-variables';
-@import './generate-variable-media-queries';
+@import './generate-media-queries';
+@import './generate-responsive-variables';
 @import './line-height';
 @import './map-deep-get';
 @import './margin';
@@ -14,6 +14,7 @@
 @import './padding';
 @import './power';
 @import './responsive-font-size';
+@import './show-and-hide';
 @import './strip-unit';
 @import './unit';
 @import './unit-ceil';

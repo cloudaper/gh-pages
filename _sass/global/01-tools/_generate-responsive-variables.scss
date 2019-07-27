@@ -1,0 +1,29 @@
+@mixin generate-responsive-variables($responsive-variables, $scale) {
+
+  :root {
+
+    @each $variable in $responsive-variables {
+
+      $map: nth($variable, 1);
+      $prefix: nth($variable, 2);
+      $unit: nth($variable, 3);
+
+      @if $unit {
+        @if $unit == 'round' {
+          @include generate-unit-variables($map, $prefix, $scale, true);
+        }
+        @else {
+          @include generate-unit-variables($map, $prefix, $scale, false);
+        }
+      }
+      @else {
+        @if map-has-key($map, $scale) {
+          @include generate-variables(map-deep-get($map, $scale), $prefix);
+        }
+      }
+
+    }
+
+  }
+
+}

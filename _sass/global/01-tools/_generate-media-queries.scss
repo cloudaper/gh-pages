@@ -1,4 +1,4 @@
-@mixin generate-hide-utility-media-queries() {
+@mixin generate-media-queries() {
 
   @each $scale, $value in $modular-scale {
     
@@ -27,14 +27,18 @@
         @if index(map-keys(map-deep-get($breakpoints, $condition)), $scale) == 1 and $min-max == 'max' {
 
           @media screen and (#{$min-max}-#{$condition}: map-deep-get($breakpoints, $condition, $scale)) {
-            @include _show_hide($min-max, $condition, $scale);
+            $current-scale: $scale !global;
+            $current-condition: $condition !global;
+            @content;
           }
 
         }
         @else if index(map-keys(map-deep-get($breakpoints, $condition)), $scale) == length(map-keys(map-deep-get($breakpoints, $condition))) and $min-max == 'min' {
 
           @media screen and (#{$min-max}-#{$condition}: map-deep-get($breakpoints, $condition, $scale)) {
-            @include _show_hide($min-max, $condition, $scale);
+            $current-scale: $scale !global;
+            $current-condition: $condition !global;
+            @content;
           }
 
         }
@@ -48,7 +52,9 @@
             @media screen
               and (max-#{$condition}: map-deep-get($breakpoints, $condition, $scale))
               and (min-#{$condition}: map-deep-get($breakpoints, $condition, $previous-scale) + 1) {
-              @include _show_hide($min-max, $condition, $scale);
+              $current-scale: $scale !global;
+              $current-condition: $condition !global;
+              @content;
             }
 
           }
@@ -60,7 +66,9 @@
             @media screen
               and (min-#{$condition}: map-deep-get($breakpoints, $condition, $scale))
               and (max-#{$condition}: map-deep-get($breakpoints, $condition, $next-scale) - 1) {
-              @include _show_hide($min-max, $condition, $scale);
+              $current-scale: $scale !global;
+              $current-condition: $condition !global;
+              @content;
             }
 
           }
@@ -70,19 +78,7 @@
       }
 
     }
-
-  }
-
-}
-
-@mixin _show_hide($min-max, $condition, $scale) {
-
-  .u-hide\@#{$min-max}-#{$condition}-#{$scale} {
-    display: none;
-  }
-
-  .u-show\@#{$min-max}-#{$condition}-#{$scale} {
-    display: unset;
+    
   }
 
 }

@@ -1,14 +1,1 @@
-@include generate-variable-media-queries(
-  (
-    ($baseline-unit, 'responsive-baseline-unit', false),
-    ($paddings, 'responsive-padding', 'round'),
-    ($margins, 'responsive-margin', 'round'),
-    ($responsive-body, 'responsive-body', false),
-    (map-deep-get($responsive-headings, 'h1'), 'responsive-h1', false),
-    (map-deep-get($responsive-headings, 'h2'), 'responsive-h2', false),
-    (map-deep-get($responsive-headings, 'h3'), 'responsive-h3', false),
-    (map-deep-get($responsive-headings, 'h4'), 'responsive-h4', false),
-    (map-deep-get($responsive-headings, 'h5'), 'responsive-h5', false),
-    (map-deep-get($responsive-headings, 'h6'), 'responsive-h6', false)
-  )
-);
+@include generate-responsive-variables($responsive-variables, 'default');

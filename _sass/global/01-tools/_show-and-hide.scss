@@ -1,0 +1,24 @@
+@mixin show-and-hide($scale: 'default', $condition: null) {
+
+  $suffix: null;
+
+  @if $scale != 'default' {
+
+    @if $condition {
+      $suffix: \@#{$condition}-#{$scale};
+    }
+    @else {
+      $suffix: \@#{$scale};
+    }
+    
+  }
+
+  .u-hide#{$suffix} {
+    display: none;
+  }
+
+  .u-show#{$suffix} {
+    display: unset;
+  }
+
+}

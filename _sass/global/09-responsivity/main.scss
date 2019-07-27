@@ -1,0 +1,10 @@
+
+@include generate-media-queries() {
+
+  // 04-generic
+  @include generate-responsive-variables($responsive-variables, $current-scale);
+
+  // 08-utilities
+  @include show-and-hide($current-scale, $current-condition);
+
+}
