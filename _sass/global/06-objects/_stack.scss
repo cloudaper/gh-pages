@@ -14,7 +14,12 @@
     --local-margin: var(--responsive-margin, margin());
   }
 
-  &--margin {
+  &--small-margin {
+    --local-margin: var(--responsive-margin--small, margin('small'));
+  }
+
+  &--margin,
+  &--small-margin {
 
     > * + * {
       margin-top: var(--local-margin, 0);
@@ -29,7 +34,8 @@
       margin-top: initial !important;
     }
 
-    &#{$root}--margin {
+    &#{$root}--margin,
+    &#{$root}--small-margin {
 
       > * {
         margin-right: var(--local-margin, 0);
