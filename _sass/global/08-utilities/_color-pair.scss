@@ -1,25 +1,50 @@
 @each $color-pair in map-keys(flat-map($color-pairs)) {
 
-  .u-color-pair--#{$color-pair} {
+  %#{$color-pair} {
     background-color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'opaque')) !important;
     --local-background-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'opaque'))} !important;
     color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default')) !important;
     --local-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default'))} !important;
-
-    &.u-color-pair--fill {
-      fill: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default')) !important;
-    }
-
   }
 
-  .u-inverse-color-pair--#{$color-pair} {
+  %#{$color-pair}--inverse {
     background-color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'opaque')) !important;
     --local-background-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'opaque'))} !important;
     color: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default')) !important;
     --local-color: #{rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default'))} !important;
+  }
 
-    &.u-inverse-color-pair--#{$color-pair} {
-      fill: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default')) !important;
+  %#{$color-pair}--fill {
+    fill: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 2), map-deep-get($transparency-levels, 'default')) !important;
+  }
+
+  %#{$color-pair}--fill-inverse {
+    fill: rgba(nth(map-deep-get(flat-map($color-pairs), $color-pair), 1), map-deep-get($transparency-levels, 'default')) !important;
+  }
+
+  .u-color-pair--#{$color-pair} {
+    @extend %#{$color-pair};
+
+    &.u-color-pair--inverse {
+      @extend %#{$color-pair}--inverse;
+    }
+
+    &.u-color-pair--fill {
+
+      &,
+      svg {
+        @extend %#{$color-pair}--fill;
+      }
+
+      &.u-color-pair--inverse {
+        
+        &,
+        svg {
+          @extend %#{$color-pair}--fill-inverse;
+        }
+      
+      }
+
     }
 
   }
