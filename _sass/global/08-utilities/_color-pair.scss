@@ -25,8 +25,43 @@
   .u-color-pair--#{$color-pair} {
     @extend %#{$color-pair};
 
+    @at-root a#{&},
+    &.u-color-pair--reactive {
+      cursor: pointer;
+      transition-property: color, background-color;
+      transition-duration: map-deep-get($durations, 'shorter');
+      transition-timing-function: ease-in;
+  
+      &:hover,
+      &:focus {
+        outline: none;
+        @extend %#{$color-pair}--inverse;
+      }
+  
+      &:active {
+        transition-duration: map-deep-get($durations, 'shortest');
+        @extend %brand-darkest-blue;
+      }
+  
+    }
+
     &.u-color-pair--inverse {
       @extend %#{$color-pair}--inverse;
+
+      @at-root a#{&},
+      &.u-color-pair--reactive {
+    
+        &:hover,
+        &:focus {
+          @extend %#{$color-pair};
+        }
+    
+        &:active {
+          @extend %brand-darkest-blue;
+        }
+    
+      }
+
     }
 
     &.u-color-pair--fill {
@@ -36,11 +71,59 @@
         @extend %#{$color-pair}--fill;
       }
 
+      @at-root a#{&},
+      &.u-color-pair--reactive {
+    
+        &:hover,
+        &:focus {
+          
+          &,
+          svg {
+            @extend %#{$color-pair}--fill-inverse;
+          }
+
+        }
+    
+        &:active {
+          
+          &,
+          svg {
+            @extend %brand-darkest-blue--fill;
+          }
+
+        }
+    
+      }
+
       &.u-color-pair--inverse {
         
         &,
         svg {
           @extend %#{$color-pair}--fill-inverse;
+        }
+
+        @at-root a#{&},
+        &.u-color-pair--reactive {
+      
+          &:hover,
+          &:focus {
+            
+            &,
+            svg {
+              @extend %#{$color-pair}--fill;
+            }
+
+          }
+      
+          &:active {
+            
+            &,
+            svg {
+              @extend %brand-darkest-blue--fill;
+            }
+
+          }
+      
         }
       
       }
