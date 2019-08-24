@@ -1,0 +1,41 @@
+*:not(.u-ignore-baseline) {
+
+  > {
+
+    p:not(.u-ignore-baseline) {
+      @include responsive-font-size('responsive-body', $body-font-family, true);
+    }
+
+    h1:not(.u-ignore-baseline),
+    .alpha:not(.u-ignore-baseline) {
+      @include responsive-font-size('responsive-h1', 'futura', 'line-height');
+    }
+
+    h2:not(.u-ignore-baseline),
+    .beta:not(.u-ignore-baseline) {
+      @include responsive-font-size('responsive-h2', 'roboto', 'line-height');
+    }
+
+    h3:not(.u-ignore-baseline),
+    .gamma:not(.u-ignore-baseline) {
+      @include responsive-font-size('responsive-h3', 'roboto', 'line-height');
+    }
+
+    h4:not(.u-ignore-baseline),
+    .delta:not(.u-ignore-baseline) {
+      @include responsive-font-size('responsive-h4', 'roboto', 'line-height');
+    }
+
+    h5:not(.u-ignore-baseline),
+    .epsilon:not(.u-ignore-baseline) {
+      @include responsive-font-size('responsive-h5', 'roboto', 'line-height');
+    }
+
+    h6:not(.u-ignore-baseline),
+    .zeta:not(.u-ignore-baseline) {
+      @include responsive-font-size('responsive-h6', 'roboto', 'line-height');
+    }
+
+  }
+
+}
