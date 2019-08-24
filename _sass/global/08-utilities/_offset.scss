@@ -1,0 +1,44 @@
+.u-offset {
+  $root: &;
+
+  &--top {
+    margin-top: var(--offset, 1rem) !important;
+  }
+
+  &--left {
+    margin-left: var(--offset, 1rem) !important;
+  }
+
+  &--bottom {
+    margin-bottom: var(--offset, 1rem) !important;
+  }
+
+  &--right {
+    margin-right: var(--offset, 1rem) !important;
+  }
+
+  &--double {
+    --offset: 2rem;
+  }
+
+  &--negative {
+
+    &#{$root}--top {
+      margin-top: calc(-1 * var(--offset, 1rem)) !important;
+    }
+  
+    &#{$root}--left {
+      margin-left: calc(-1 * var(--offset, 1rem)) !important;
+    }
+  
+    &#{$root}--bottom {
+      margin-bottom: calc(-1 * var(--offset, 1rem)) !important;
+    }
+  
+    &#{$root}--right {
+      margin-right: calc(-1 * var(--offset, 1rem)) !important;
+    }
+
+  }
+
+}
