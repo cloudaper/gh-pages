@@ -1,0 +1,18 @@
+.u-responsive-body--small {
+
+  &,
+  * {
+    @include responsive-font-size('responsive-body--small', false, false, true);
+  }
+
+  @at-root p#{&}:not(.u-ignore-baseline),
+  &:not(.u-ignore-baseline) p {
+    @include responsive-font-size('responsive-body--small', $body-font-family, 'line-height', true);
+  }
+
+  @at-root li#{&}:not(.u-ignore-baseline),
+  &:not(.u-ignore-baseline) li {
+    @include responsive-font-size('responsive-body--small', $body-font-family, 'line-height', true);
+  }
+
+}

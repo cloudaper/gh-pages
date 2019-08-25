@@ -1,14 +1,27 @@
 $body-font-family: 'roboto';
 
 $responsive-body: (
-  smaller: (
-    font-size('default', false, $body-font-family)
-  ),
   small: (
-    font-size('default', false, $body-font-family)
+    smaller: (
+      font-size('small', false, $body-font-family)
+    ),
+    small: (
+      font-size('small', false, $body-font-family)
+    ),
+    default: (
+      font-size('small', false, $body-font-family)
+    )
   ),
   default: (
-    font-size('default', false, $body-font-family)
+    smaller: (
+      font-size('default', false, $body-font-family)
+    ),
+    small: (
+      font-size('default', false, $body-font-family)
+    ),
+    default: (
+      font-size('default', false, $body-font-family)
+    )
   )
 );
 
