@@ -1,0 +1,20 @@
+{% comment %}
+  content:
+    - include [object]
+      - path [string: path]
+      - props [object]
+      - pass_classes [array]
+      - pass_styles [array]
+    - text [text: Markdown]
+    - keep_paragraphs [bool = false]
+{% endcomment %}
+
+{% if include.content.include %}
+  {% include {{ include.content.include.path }} props=include.content.include.props pass_classes=include.content.include.pass_classes pass_styles=include.content.include.pass_styles %}
+{% elsif include.content.text %}
+  {% if include.content.text_keep_paragraphs %}
+    {{ include.content.text | strip | markdownify }}
+  {% else %}
+    {{ include.content.text | strip | markdownify | remove: '<p>' | remove: '</p>' }}
+  {% endif %}
+{% endif %}
