@@ -2,14 +2,10 @@
 
 .o-conceal-header,
 .u-conceal-header {
-  --conceal-header-content-height-local: var(--conceal-header-content-height, var(--responsive-padding));
-  --conceal-header-padding-local: var(--conceal-header-padding, var(--local-padding, var(--responsive-padding)));
   --conceal-header-background-local: var(--conceal-header-background, var(--local-background-color, white));
   --conceal-header-body-background-local: var(--conceal-header-body-background, white);
-  --conceal-header-height-local: calc(
-    var(--conceal-header-content-height-local) +
-    2 * var(--conceal-header-padding-local)
-  );
+  // Fallback if JavaScript calulcation is not working
+  --conceal-header-height-local: var(--conceal-header-height, var(--conceal-header-fallback-height));
 }
 
 .o-conceal-header {

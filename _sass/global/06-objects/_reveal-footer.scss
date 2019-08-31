@@ -2,14 +2,10 @@
 
 .o-reveal-footer,
 .u-reveal-footer {
-  --reveal-footer-content-height-local: var(--reveal-footer-content-height, var(--responsive-padding));
-  --reveal-footer-padding-local: var(--reveal-footer-padding, var(--local-padding, var(--responsive-padding)));
   --reveal-footer-background-local: var(--reveal-footer-background, var(--local-background-color, white));
   --reveal-footer-body-background-local: var(--reveal-footer-body-background, white);
-  --reveal-footer-height-local: calc(
-    var(--reveal-footer-content-height-local)
-    + 2 * var(--reveal-footer-padding-local)
-  );
+  // Fallback if JavaScript calulcation is not working
+  --reveal-footer-height-local: var(--reveal-footer-height, var(--reveal-footer-fallback-height));
 }
 
 .o-reveal-footer {
