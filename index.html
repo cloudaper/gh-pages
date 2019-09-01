@@ -1,0 +1,160 @@
+---
+layout: global/default
+body_classes:
+  - o-flex
+  - o-flex--column
+classes:
+  - c-horizontal-logo--margin-high
+  - u-color-pair--brand-brand-blue
+  - u-responsive-padding
+  - c-footer__logo
+footer-dummy:
+  props:
+    content_background: brand-bright-blue-1
+    content:
+      text: |
+        **This is Markdown!**
+
+        Next line.
+      text_keep_paragraphs: true
+    contact:
+      text: |
+        **This is Markdown!**
+
+        Next line.
+      text_keep_paragraphs: true
+    legal:
+      text: |
+        **This is Markdown!**
+
+        Next line.
+      text_keep_paragraphs: true
+footer-simple:
+  props:
+    contact:
+      text: Roboboxe jsme pro vás oživili v Cloudaperu.
+    legal:
+      text: |
+        [this is a link](http:/google.com)
+
+        [this is a link](http:/google.com)
+
+        [this is a link](http:/google.com)
+
+        [this is a link](http:/google.com)
+
+        [this is a link](http:/google.com)
+
+        [this is a link](http:/google.com)
+
+        [this is also a link](http:/google.com)
+      text_keep_paragraphs: true
+footer:
+  props:
+    content:
+      text: |
+        **This is Markdown!**
+
+        Next line.
+      text_keep_paragraphs: true
+    contact:
+      text: |
+        **This is Markdown!**
+
+        Next line.
+      text_keep_paragraphs: true
+    legal:
+      text: |
+        **This is Markdown!**
+
+        Next line.
+      text_keep_paragraphs: false
+---
+
+<div class="u-margin">—</div>
+
+{% include components/global/footer/default.html props=page.footer-dummy.props %}
+
+<div class="u-margin">—</div>
+
+{% include components/global/footer/default.html props=page.footer-simple.props %}
+
+<div class="u-margin">—</div>
+
+{% include components/global/footer/default.html props=page.footer.props %}
+
+
+<div class="u-margin">—</div>
+
+<div class="c-footer c-footer--responsive">
+  <div class="c-footer__contact o-stack o-stack--margin u-responsive-padding-top u-responsive-padding-left u-responsive-padding-right u-responsive-padding@width-small u-responsive-padding@width-smaller u-color-pair--brand-brand-blue">
+    <p class="u-offset--top u-offset--negative">Roboboxe jsme pro vás stvořili v&nbsp;Cloudaperu.</p>
+    <div style="
+      border-style: solid;
+      border-width: 0;
+      border-bottom-width: 4px;
+      margin-bottom: -4px;
+      border-color: rgba(255,255,255,0.5);
+      margin-left: 8rem;
+      margin-right: 8rem;
+    "></div>
+    <div class="o-stack u-responsive-body--small">
+      <p><strong>Cloudaper s.&thinsp;r.&thinsp;o.</strong></p>
+      <p>
+        Ve Smečkách 1408/4</br>
+        110 00 Praha 1
+      </p>
+      <p>
+        IČO: 04250494</br>
+        DIČ: CZ04250494
+      </p>
+      <p>
+        <a href="tel:+420228802202">+420 228 802 202</a></br>
+        <a href="mailto:hello@cloudaper.com">hello@cloudaper.com</a>
+      </p>
+      <p>Společnost zapsaná v obchodním rejstříku vedeném Městským soudem v Praze, oddíl C, vložka 244622.</p>
+    </div>
+  </div>
+  <div class="c-footer__content o-flex o-flex--column">
+    <div class="o-flex__item--grow u-responsive-padding u-color-pair--brand-dark-blue">
+      Bla bla.
+    </div>
+  </div>
+  {% include components/global/horizontal-logo/default.html pass_classes=page.classes %}
+  <div class="c-footer__legal o-flex o-flex--align-center u-responsive-padding--small u-responsive-padding-left@width-small u-responsive-padding-right@width-small u-responsive-padding-left@width-smaller u-responsive-padding-right@width-smaller u-color-pair--brand-darkest-blue">
+    <div class="o-flex__item--grow o-stack o-stack--horizontal o-flex o-flex--space-between o-flex--align-center u-responsive-body--small u-ignore-baseline">
+      <ul class="o-stack o-stack--horizontal o-stack--small-margin o-flex o-flex--wrap">
+        <li><a href="">Právní sdělení</a></li>
+        <li><a href="">Centrum soukromí</a></li>
+        <li><a href="">Zásady ochrany osobních údajů</a></li>
+        <li><a href="">Cookies</a></li>
+        <li><a href="">Reklamy</a></li>
+        <li>&copy; Cloudaper 2019</li>
+      </ul>
+      <p style="white-space: nowrap;"><a href="">English</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="u-margin">—</div>
+
+<div class="u-margin">
+  <h1>H1</h1>
+  <p>Lipsum</p>
+  <p>Lipsum</p>
+  <h2>H2</h2>
+  <p>Lipsum</p>
+  <p>Lipsum</p>
+  <h3>H3</h3>
+  <p>Lipsum</p>
+  <p>Lipsum</p>
+  <h4>H4</h4>
+  <p>Lipsum</p>
+  <p>Lipsum</p>
+  <h5>H5</h5>
+  <p>Lipsum</p>
+  <p>Lipsum</p>
+  <h6>H6</h6>
+  <p>Lipsum</p>
+  <p>Lipsum</p>
+</div>
