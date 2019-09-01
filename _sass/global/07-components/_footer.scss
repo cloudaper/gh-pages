@@ -1,0 +1,37 @@
+.c-footer {
+  display: grid;
+  grid-template-areas: 'content'
+                       'contact'
+                       'legal'
+                       'logo';
+  height: 100%;
+
+  &__content {
+    grid-area: content;
+  }
+
+  &__contact {
+    grid-area: contact;
+  }
+
+  &__legal {
+    grid-area: legal;
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &--responsive {
+
+    @media screen and (min-width: map-deep-get($breakpoints, 'width', 'small')) {
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto min-content min-content;
+      grid-template-areas: 'contact content'
+                           'logo    content'
+                           'logo    legal  ';
+    }
+
+  }
+  
+}
