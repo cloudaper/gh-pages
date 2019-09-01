@@ -14,3 +14,7 @@ h6,
 .zeta {
   max-width: $optimal-line-length;
 }
+
+p {
+  @include responsive-font-size('responsive-body', false, 'line-height');
+}
