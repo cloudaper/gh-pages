@@ -15,4 +15,47 @@
     @include responsive-font-size('responsive-body--small', $body-font-family, 'line-height', true);
   }
 
+  @at-root input#{&},
+  & input {
+    padding-top: calc(0.5rem);
+    padding-bottom: calc(0.5rem);
+    padding-left: calc((var(--local-line-height) - var(--local-font-size)) / 2 - #{$divider-width} + 0.5rem);
+    padding-right: calc((var(--local-line-height) - var(--local-font-size)) / 2 - #{$divider-width} + 0.5rem);
+    line-height: calc(var(--responsive-body--small--line-height) - 2 * #{$divider-width}) !important;
+  }
+
+  @at-root button#{&},
+  & button {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: calc((var(--local-line-height) - var(--local-font-size)) / 2 + 0.5rem);
+    padding-right: calc((var(--local-line-height) - var(--local-font-size)) / 2 + 0.5rem);
+  }
+
+  @at-root .c-button#{&},
+  & .c-button {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: calc((var(--local-line-height) - var(--local-font-size)) / 2 + 0.5rem);
+    padding-right: calc((var(--local-line-height) - var(--local-font-size)) / 2 + 0.5rem);
+  }
+
+  @at-root input#{&}:not(.u-ignore-baseline),
+  &:not(.u-ignore-baseline) input {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @at-root button#{&}:not(.u-ignore-baseline),
+  &:not(.u-ignore-baseline) button {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @at-root .c-button#{&}:not(.u-ignore-baseline),
+  &:not(.u-ignore-baseline) .c-button {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
 }
