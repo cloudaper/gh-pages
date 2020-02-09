@@ -1,4 +1,10 @@
 ---
 ---
 
-{% include objects/global/conceal-header-reveal-footer/script.js %}
+{% for script in layout.data.scripts %}
+  {% include {{ script }} %}
+{% endfor %}
+
+{% for script in site.scripts %}
+  {% include {{ script }} %}
+{% endfor %}
